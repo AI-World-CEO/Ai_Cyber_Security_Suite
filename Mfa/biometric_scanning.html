@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biometric Scanning - Cyber AI Security Suite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100">
+    <div class="flex flex-col md:flex-row">
+        <div class="bg-white dark:bg-zinc-800 shadow-lg h-screen sticky top-0 p-5 w-full md:w-60">
+            <div class="text-xl font-bold mb-5">Menu</div>
+            <ul class="flex flex-col">
+                <li class="py-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 cursor-pointer">
+                    <a href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="py-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 cursor-pointer">
+                    <a href="{{ url_for('biometric_scanning') }}">Biometric Scanning</a>
+                </li>
+                <!-- Add other menu items here -->
+            </ul>
+        </div>
+
+        <div class="flex-1 p-10">
+            <h1 class="text-3xl font-bold mb-3">Biometric Scanning</h1>
+            <p class="mb-5">Please scan your fingerprint or retina for verification.</p>
+            <div class="mb-10">
+                <button id="startScan" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Start Biometric Scan
+                </button>
+            </div>
+            <div id="scanResult" class="text-lg font-semibold"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('startScan').addEventListener('click', function() {
+            // Placeholder for starting the biometric scan
+            // This will typically call a backend API that interacts with the biometric device
+
+            // Simulating a scan result for demonstration
+            setTimeout(() => {
+                document.getElementById('scanResult').textContent = "Scan successful. User verified!";
+            }, 2000); // Simulate a 2-second scan
+        });
+    </script>
+</body>
+</html>

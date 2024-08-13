@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs - AI Cyber Security Suite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 min-h-screen">
+    <div class="flex flex-col md:flex-row">
+        <div class="bg-white dark:bg-zinc-800 shadow-lg h-screen sticky top-0 p-5 w-full md:w-60">
+            <div class="text-xl font-bold mb-5">Menu</div>
+            <ul class="flex flex-col">
+                <li class="py-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 cursor-pointer">
+                    <a href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="py-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 cursor-pointer">
+                    <a href="{{ url_for('logs') }}">Logs</a>
+                </li>
+                <!-- Add other menu items here -->
+            </ul>
+        </div>
+
+        <div class="flex-1 p-10">
+            <header class="bg-blue-700 dark:bg-blue-800 text-white p-4 rounded-md mb-6">
+                <h1 class="text-3xl font-bold">AI Cyber Security Suite - Logs</h1>
+            </header>
+
+            <div class="mb-4">
+                <input type="text" placeholder="Search logs..." class="p-2 w-full rounded border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300">
+            </div>
+
+            <div class="overflow-auto rounded-lg shadow">
+                <table class="w-full">
+                    <thead class="bg-blue-500 dark:bg-blue-600 text-white">
+                        <tr>
+                            <th class="p-3 text-left">Time</th>
+                            <th class="p-3 text-left">Event</th>
+                            <th class="p-3 text-left">Status</th>
+                            <th class="p-3 text-left">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white dark:bg-zinc-800">
+                        <tr>
+                            <td class="p-3 border-t border-zinc-300 dark:border-zinc-700">2023-09-15 14:22</td>
+                            <td class="p-3 border-t border-zinc-300 dark:border-zinc-700">Login Attempt</td>
+                            <td class="p-3 border-t border-zinc-300 dark:border-zinc-700 text-green-600 dark:text-green-400">Successful</td>
+                            <td class="p-3 border-t border-zinc-300 dark:border-zinc-700">User Admin accessed the system</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 border-t border-zinc-300 dark:border-zinc-700">2023-09-15 14:30</td>
+                            <td class="p-3 border-t border-zinc-300 dark:border-zinc-700">File Access</td>
+                            <td class="p-3 border-t border-zinc-300 dark:border-zinc-700 text-red-600 dark:text-red-400">Denied</td>
+                            <td class="p-3 border-t border-zinc-300 dark:border-zinc-700">Unauthorized access attempt to server files</td>
+                        </tr>
+                        <!-- Add more log entries here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <footer class="text-center py-8 text-zinc-600 dark:text-zinc-400 mt-12">
+                © 2023 AI Cyber Security Suite. All rights reserved.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

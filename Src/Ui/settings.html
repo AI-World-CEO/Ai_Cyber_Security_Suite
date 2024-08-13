@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AI Cyber Security Suite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 min-h-screen">
+    <div class="flex flex-col md:flex-row">
+        <div class="bg-white dark:bg-zinc-800 shadow-lg h-screen sticky top-0 p-5 w-full md:w-60">
+            <div class="text-xl font-bold mb-5">Menu</div>
+            <ul class="flex flex-col">
+                <li class="py-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 cursor-pointer">
+                    <a href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="py-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 cursor-pointer">
+                    <a href="{{ url_for('settings') }}">Settings</a>
+                </li>
+                <!-- Add other menu items here -->
+            </ul>
+        </div>
+
+        <div class="flex-1 p-10">
+            <header class="mb-8">
+                <h1 class="text-3xl font-bold">AI Cyber Security Suite - Settings</h1>
+            </header>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-zinc-800 shadow rounded-lg p-4">
+                    <h2 class="font-semibold text-xl mb-4">Profile Settings</h2>
+                    <form>
+                        <label class="block mb-2">Username</label>
+                        <input type="text" class="w-full p-2 border rounded mb-4 dark:bg-zinc-700 dark:border-zinc-600" placeholder="Username">
+
+                        <label class="block mb-2">Email</label>
+                        <input type="email" class="w-full p-2 border rounded mb-4 dark:bg-zinc-700 dark:border-zinc-600" placeholder="Email Address">
+
+                        <label class="block mb-2">Password</label>
+                        <input type="password" class="w-full p-2 border rounded mb-4 dark:bg-zinc-700 dark:border-zinc-600" placeholder="Password">
+
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Profile</button>
+                    </form>
+                </div>
+                <div class="bg-white dark:bg-zinc-800 shadow rounded-lg p-4">
+                    <h2 class="font-semibold text-xl mb-4">Security Settings</h2>
+                    <form>
+                        <label class="block mb-4">
+                            <input type="checkbox" class="mr-2 leading-tight dark:bg-zinc-700 dark:border-zinc-600">
+                            Enable 2FA Authentication
+                        </label>
+                        <label class="block mb-4">
+                            <input type="checkbox" class="mr-2 leading-tight dark:bg-zinc-700 dark:border-zinc-600">
+                            Send Security Alerts
+                        </label>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Security Settings</button>
+                    </form>
+                </div>
+                <div class="bg-white dark:bg-zinc-800 shadow rounded-lg p-4">
+                    <h2 class="font-semibold text-xl mb-4">Notification Settings</h2>
+                    <form>
+                        <label class="block mb-4">
+                            <input type="checkbox" class="mr-2 leading-tight dark:bg-zinc-700 dark:border-zinc-600">
+                            Email Notifications
+                        </label>
+                        <label class="block mb-4">
+                            <input type="checkbox" class="mr-2 leading-tight dark:bg-zinc-700 dark:border-zinc-600">
+                            SMS Notifications
+                        </label>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Notification Settings</button>
+                    </form>
+                </div>
+            </div>
+
+            <footer class="text-center py-8 text-zinc-600 dark:text-zinc-400 mt-12">
+                © 2023 AI Cyber Security Suite. All rights reserved.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

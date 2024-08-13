@@ -1,0 +1,66 @@
+{
+  "encryption_settings": {
+    "kdf_params": {
+      "algorithm": "SHA256",
+      "length": 32,
+      "salt_length": 16,
+      "iterations": 100000
+    },
+    "encryption_algorithm": "AES256",
+    "rotation_policy": {
+      "interval": 3600,
+      "immediate_rotation_on_threat": true
+    }
+  },
+  "ai_settings": {
+    "threat_detection_model": {
+      "algorithm": "IsolationForest",
+      "contamination": 0.1,
+      "parameters": {
+        "n_estimators": 100,
+        "max_samples": "auto",
+        "bootstrap": false,
+        "n_jobs": -1
+      }
+    },
+    "anomaly_detection": {
+      "model_type": "IsolationForest",
+      "model_parameters": {
+        "contamination": 0.1,
+        "n_estimators": 100
+      },
+      "scaler": {
+        "type": "StandardScaler"
+      }
+    }
+  },
+  "logging_settings": {
+    "log_level": "INFO",
+    "log_file_path": "logs/application.log",
+    "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "rotation_policy": {
+      "maxBytes": 10485760,
+      "backupCount": 5
+    }
+  },
+  "key_rotation_settings": {
+    "rotation_interval": 3600,
+    "immediate_rotation_on_threat": true
+  },
+  "api_settings": {
+    "auth": {
+      "jwt_secret_key": "your_jwt_secret_key_here",
+      "jwt_algorithm": "HS256",
+      "token_expiry_minutes": 30
+    }
+  },
+  "ui_settings": {
+    "frontend": {
+      "theme": "light",
+      "language": "en"
+    },
+    "backend": {
+      "database_url": "sqlite:///backend/database.db"
+    }
+  }
+}
